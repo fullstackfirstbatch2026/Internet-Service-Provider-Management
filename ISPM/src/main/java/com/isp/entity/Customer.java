@@ -1,0 +1,57 @@
+package com.isp.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "customers")
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
+    private Integer customerId;
+
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "phone")
+    private String phone;
+
+    public Customer() {
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+}
